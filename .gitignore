@@ -1,0 +1,45 @@
+## Rider 설정 관련
+.idea/
+*.sln.iml
+
+# 사용자별 설정
+*.DotSettings.user
+
+## 빌드 결과물
+bin/
+obj/
+out/
+artifacts/
+
+## VS의 잔여 파일 (혹시 병행 사용 시)
+*.user
+*.suo
+*.cache
+*.vspscc
+*.vssscc
+.vs/
+
+## 로그 및 임시 파일
+*.log
+*.tlog
+*.tmp
+*.bak
+
+## 패키지 및 복원 관련
+packages/
+.nuget/
+*.nupkg
+*.snupkg
+
+## 디버그/릴리즈 파일
+*.pdb
+*.dbmdl
+
+## 시스템 파일
+Thumbs.db
+Desktop.ini
+
+## Rider Live Templates (선택적으로 무시)
+.idea/.idea.ReSharper/
+.idea/usage.statistics.xml
+.idea/workspace.xml
