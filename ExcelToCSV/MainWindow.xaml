@@ -1,9 +1,17 @@
-﻿<Window x:Class="ExcelToCsvApp.MainWindow"
+﻿<!-- 
+Window는 최상위 컨테이너. x:Class 부분이 어떤 MainWindow 클래스와 연결할지
+xmlns는 네임스페이스
+Title 줄은 맨 위 제목, 그리고 크기를 지정함
+AllowDrop을 켜면 Drop과 DragOver에 메서드 바인딩 가능
+-->
+<Window x:Class="ExcelToCsvApp.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Excel to CSV 변환기" Height="450" Width="600"
         AllowDrop="True" Drop="Window_Drop" DragOver="Window_DragOver">
-
+<!-- 
+Margin 10 넣으면 10픽셀만큼 공간 여유 생김
+-->
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
