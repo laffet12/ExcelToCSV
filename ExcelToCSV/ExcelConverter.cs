@@ -3,7 +3,6 @@ using NPOI.XSSF.UserModel;  // XLSX
 using NPOI.HSSF.UserModel;  // XLS
 using System.IO;
 using System.Text;
-using System;
 
 namespace ExcelToCsvApp
 {
@@ -14,7 +13,7 @@ namespace ExcelToCsvApp
             IWorkbook workbook;
             using (var fs = new FileStream(filePath, FileMode.Open, FileAccess.Read))
             {
-                if (Path.GetExtension(filePath).ToLower() == ".xls")
+                if (Path.GetExtension(filePath).Equals(".xls", StringComparison.CurrentCultureIgnoreCase))
                     workbook = new HSSFWorkbook(fs);  // XLS
                 else
                     workbook = new XSSFWorkbook(fs);  // XLSX
@@ -58,10 +57,7 @@ namespace ExcelToCsvApp
 
         private static string EscapeCsvField(string field)
         {
-            if (field == null)
-                return "";
-
-            bool mustQuote = field.Contains(",") || field.Contains("\"") || field.Contains("\n") || field.Contains("\r");
+            bool mustQuote = field.Contains(',') || field.Contains('"') || field.Contains('\n') || field.Contains('\r');
 
             if (mustQuote)
             {

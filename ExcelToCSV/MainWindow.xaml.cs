@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.IO;
-using System.Linq;
 using System.Text;
 using System.Windows;
 
 namespace ExcelToCsvApp
 {
-    public partial class MainWindow : Window
+    public partial class MainWindow
     {
         private ObservableCollection<string> excelFiles = new ObservableCollection<string>();
 
@@ -51,7 +49,7 @@ namespace ExcelToCsvApp
 
         private void OnConvertClicked(object sender, RoutedEventArgs e)
         {
-            var saveFolder = SavePathTextBox.Text?.Trim();
+            var saveFolder = SavePathTextBox.Text.Trim();
 
             if (string.IsNullOrEmpty(saveFolder) || !Directory.Exists(saveFolder))
             {

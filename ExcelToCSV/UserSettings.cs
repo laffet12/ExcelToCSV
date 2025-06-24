@@ -31,10 +31,13 @@ namespace ExcelToCsvApp
                 {
                     var dir = Path.GetDirectoryName(ConfigFilePath);
                     if (!Directory.Exists(dir))
-                        Directory.CreateDirectory(dir);
-                    File.WriteAllText(ConfigFilePath, value ?? "");
+                        Directory.CreateDirectory(dir ?? throw new InvalidOperationException());
+                    File.WriteAllText(ConfigFilePath, value);
                 }
-                catch { }
+                catch
+                {
+                    // ignored
+                }
             }
         }
     }
